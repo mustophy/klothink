@@ -69,3 +69,21 @@ nav ul {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.center-y {
+  @apply top-[50%] translate-y-[-50%]
+}
+
+.center-x {
+  @apply left-[50%] translate-x-[-50%]
+}
+.center-xy {
+  @apply left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]
+}
+
+input:focus {
+  @apply outline-grey-70
+}
+input {
+  @apply text-grey-60 font-medium text-[14px]
+}

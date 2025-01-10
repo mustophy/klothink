@@ -4,6 +4,8 @@ import { LifebuoyIcon, LightBulbIcon, ShoppingBagIcon, SparklesIcon, SpeakerWave
 import ProductCard from "./_components/ProductCard";
 import Rating from "./_components/Rating";
 import Faq from "./_components/Faq";
+import TestimonialSlider from "./_components/sliders/TestimonialSlider";
+import ProductSlider from "./_components/sliders/ProductSlider";
 
 export default function Home() {
   const _heroFeatures = [
@@ -95,11 +97,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="gap-x-[30px] grid sm:grid-cols-4">
-          {_productsList.map(({ image, name, price }) => (
-            <ProductCard key={name} name={name} image={image} price={price} />
-          ))}
-        </div>
+
+        <ProductSlider products={_productsList} />
       </section>
       <section>
         <div className="flex justify-between items-center gap-x-[150px]">
@@ -136,25 +135,7 @@ export default function Home() {
           </div>
           <FilledButton className="mr-auto sm:mr-0">View All Testimonials</FilledButton>
         </div>
-        <div className="gap-x-5 grid sm:grid-cols-3 mt-10 sm:mt-[60px] p-5 sm:p-6">
-          {_testimonials.map(({ image, name, rating, review }) => (
-            <div key={name} className="p-[30px] sm:p-10">
-              <div className="flex items-center gap-x-[10px]">
-                <div className="relative bg-[#FFEEB2] rounded-full overflow-hidden size-[50px]">
-                  <Image src={image} alt={name} fill />
-                </div>
-                <div>
-                  <p className="font-medium text-grey-15">{name}</p>
-                  <Rating value={rating} />
-                </div>
-                <div className="relative ml-auto w-[32px] h-[25px]">
-                  <Image src="/assets/images/quotes.svg" alt="quotes" fill />
-                </div>
-              </div>
-              <p className="mt-[30px] text-grey-30">{review}</p>
-            </div>
-          ))}
-        </div>
+        <TestimonialSlider testimonials={_testimonials} />
       </section>
       <section>
         <div>
@@ -268,22 +249,26 @@ const _productsList = [
   {
     name: 'Classic Denim Jeans',
     image: '/assets/images/product5.png',
-    price: '49.99'
+    price: '49.99',
+    desc: 'Slim Fit'
   },
   {
     name: 'Cozy Comfort Hoodie',
     image: '/assets/images/product2.png',
-    price: '49.99'
+    price: '49.99',
+    desc: 'Slim Fit'
   },
   {
     name: 'Classic Polo Shirt',
     image: '/assets/images/product3.png',
-    price: '49.99'
+    price: '49.99',
+    desc: 'Slim Fit'
   },
   {
     name: 'Chino Pants',
     image: '/assets/images/product4.png',
-    price: '49.99'
+    price: '49.99',
+    desc: 'Slim Fit'
   },
 ]
 
@@ -302,6 +287,18 @@ const _testimonials = [
   },
   {
     name: 'Emily Walker',
+    image: '/assets/images/user1.png',
+    review: "Adorable and comfortable! My daughter loves her new outfit. Thank you, Klothink, for dressing our little fashionista.",
+    rating: 5
+  },
+  {
+    name: 'James Walker',
+    image: '/assets/images/user1.png',
+    review: "Adorable and comfortable! My daughter loves her new outfit. Thank you, Klothink, for dressing our little fashionista.",
+    rating: 5
+  },
+  {
+    name: 'John Walker',
     image: '/assets/images/user1.png',
     review: "Adorable and comfortable! My daughter loves her new outfit. Thank you, Klothink, for dressing our little fashionista.",
     rating: 5

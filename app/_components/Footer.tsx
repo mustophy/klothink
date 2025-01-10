@@ -40,8 +40,8 @@ const Footer = () => {
     ]
     return (
         <footer className="mt-[100px]">
-            <div className="flex gap-x-20 px-20 pt-[60px]">
-                <div className="w-[355px]">
+            <div className="sm:flex gap-x-20 px-4 sm:px-20 pt-[60px]">
+                <div className="w-full sm:w-[355px]">
                     <div className="relative size-12">
                         <Image src="/assets/images/logo.svg" fill alt="Klothink Logo" />
                     </div>
@@ -50,10 +50,10 @@ const Footer = () => {
                         <FilledButton>Subscribe</FilledButton>
                     </div>
                 </div>
-                <div className="flex flex-1 justify-between pl-[60px]">
+                <div className="flex flex-1 justify-between sm:pl-[60px]">
                     <div>
                         <p className="mb-6 font-medium text-[18px] text-grey-15">Home</p>
-                        <div className="flex flex-col gap-y-[14px]">
+                        <div className="sm:flex flex-col gap-y-[14px] hidden">
                             {_homeLinks.map(({ name, url }) => (
                                 <p className="tracking-[-3%]" key={name}>{name}</p>
                             ))}
@@ -61,7 +61,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <p className="mb-6 font-medium text-[18px] text-grey-15">Menswear</p>
-                        <div className="flex flex-col gap-y-[14px]">
+                        <div className="sm:flex flex-col gap-y-[14px] hidden">
                             {_mensWearLinks.map(({ name, url }) => (
                                 <p className="tracking-[-3%]" key={name}>{name}</p>
                             ))}
@@ -69,7 +69,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <p className="mb-6 font-medium text-[18px] text-grey-15">Womenswear</p>
-                        <div className="flex flex-col gap-y-[14px]">
+                        <div className="sm:flex flex-col gap-y-[14px] hidden">
                             {_mensWearLinks.map(({ name, url }) => (
                                 <p className="tracking-[-3%]" key={name}>{name}</p>
                             ))}
@@ -77,7 +77,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <p className="mb-6 font-medium text-[18px] text-grey-15">Kidswear</p>
-                        <div className="flex flex-col gap-y-[14px]">
+                        <div className="sm:flex flex-col gap-y-[14px] hidden">
                             {_mensWearLinks.map(({ name, url }) => (
                                 <p className="tracking-[-3%]" key={name}>{name}</p>
                             ))}

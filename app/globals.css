@@ -8,6 +8,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Manrope", serif;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -15,11 +17,11 @@ body {
 }
 
 h1 {
-  @apply text-grey-10 text-[38px] font-semibold uppercase;
+  @apply text-[28px] text-grey-10 font-semibold uppercase sm:text-[38px];
 }
 
 h2 {
-  @apply text-grey-10 text-[26px] font-semibold;
+  @apply text-grey-10 text-[20px] font-semibold sm:text-[26px];
 }
 
 h3 {
@@ -27,7 +29,7 @@ h3 {
 }
 
 p {
-  @apply text-[16px];
+  @apply text-[14px] sm:text-[16px];
 }
 
 span {
@@ -35,13 +37,35 @@ span {
 }
 
 nav {
-  @apply px-20 py-[18px] border-b;
+  @apply py-[18px] border-b px-4 sm:px-20;
 }
 
 nav ul {
-  @apply relative flex items-center gap-x-[14px];
+  @apply gap-x-[14px] relative flex items-center;
 }
 
 .nav-link {
-  @apply px-[18px] py-3 text-sm text-grey-15;
+  @apply px-[18px] text-grey-15 hidden py-3 text-sm sm:block;
+}
+
+.section-header {
+  @apply flex sm:flex-row flex-col
+}
+.section-title {
+  @apply order-2 sm:order-1
+}
+.section-subtitle {
+  @apply order-1 sm:order-2 text-grey-60 uppercase
+}
+.section-tagline {
+  @apply mt-4 sm:mt-5 text-grey-40
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

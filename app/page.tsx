@@ -27,19 +27,19 @@ export default function Home() {
   const _categories = ['ALL', 'MENSWEAR', 'WOMENSWEAR', 'KIDSWEAR'];
   const _subCategries = ['Casual', 'Formal', 'Party'];
   return (
-    <main className="flex flex-col gap-y-[150px] px-20 pt-20">
-      <section className="flex gap-x-[60px]">
+    <main className="flex flex-col gap-y-20 sm:gap-y-[150px] px-4 sm:px-20 pt-10 sm:pt-20">
+      <section className="flex sm:flex-row flex-col sm:gap-x-[60px]">
         <div className="flex-1">
-          <div className="relative w-fit">
-            <h1>ELEVATE YOUR STYLE WITH <br /> KLOTHINK</h1>
-            <span className="top-0 right-0 absolute translate-x-[150%] shrink-0">STYLE REDIFINED</span>
+          <div className="section-header">
+            <h1 className="section-title">ELEVATE YOUR STYLE <br className="sm:hidden" /> WITH <br className="sm:block hidden" /> KLOTHINK</h1>
+            <span className="section-subtitle">STYLE REDIFINED</span>
           </div>
-          <p className="pt-5 pb-10">Explore a world of fashion at Klothink, where trends meet affordability. Immerse yourself in the latest styles and seize exclusive promotions.</p>
-          <div className="flex gap-x-2">
-            <FilledButton icon={<ShoppingBagIcon className="text-black size-5" />}>Shop Now</FilledButton>
-            <OutlinedButton>Contact Us</OutlinedButton>
+          <p className="section-tagline">Explore a world of fashion at Klothink, where trends meet affordability. Immerse yourself in the latest styles and seize exclusive promotions.</p>
+          <div className="flex gap-x-2 mt-6 sm:mt-10">
+            <FilledButton className="flex-1 sm:flex-none justify-center sm:justify-start" icon={<ShoppingBagIcon className="text-black size-5" />}>Shop Now</FilledButton>
+            <OutlinedButton className="flex-1 sm:flex-none justify-center sm:justify-start">Contact Us</OutlinedButton>
           </div>
-          <div className="gap-4 grid grid-cols-2 bg-white-97 mt-[60px] p-4">
+          <div className="gap-4 grid grid-cols-2 bg-white-97 mt-10 sm:mt-[60px] p-[10px] sm:p-4">
             {_heroFeatures.map(({ description, title }) => (
               <div key={title} className="bg-absolute-white flex flex-col p-6 rounded-xl">
                 <h2>{description}</h2>
@@ -48,50 +48,54 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="relative bg-[#F7F7F8] w-[544px]">
+        <div className="relative bg-[#F7F7F8] w-full sm:w-[544px] h-[350px] sm:h-auto">
           <Image src="/assets/images/product1.png" alt="hero" fill />
-          <div className="bottom-4 left-0 absolute flex justify-between items-center px-4 w-full">
-            <div className="bg-absolute-white flex gap-x-[6px] px-[10px] py-2 rounded-full">
+          <div className="bottom-4 left-0 absolute flex flex-wrap justify-between items-center gap-y-[10px] px-4 w-full">
+            <div className="bg-absolute-white flex items-center gap-x-[6px] order-2 sm:order-1 px-[10px] py-2 rounded-full">
               <span>Color</span>
-              <div className="border-white-95 p-1 border rounded-full">
-
+              <div className="flex gap-x-[2px] border-white-95 p-1 border rounded-full">
+                <div className="bg-[#739CDA] rounded-full size-4"></div>
+                <div className="bg-[#DAA573] rounded-full size-4"></div>
+                <div className="bg-[#DAD673] rounded-full size-4"></div>
               </div>
             </div>
-            <div className="bg-absolute-white flex items-center gap-x-[2px] px-4 py-2 rounded-full">
+            <div className="bg-absolute-white flex items-center gap-x-[2px] order-1 sm:order-2 px-4 py-2 rounded-full w-full sm:w-fit">
               <span className="mr-1 font-medium text-grey-15">Sizes</span>
-              <Pill>S</Pill>
-              <Pill>M</Pill>
-              <Pill>L</Pill>
-              <Pill>XL</Pill>
+              <Pill className="flex-1">S</Pill>
+              <Pill className="flex-1">M</Pill>
+              <Pill className="flex-1">L</Pill>
+              <Pill className="flex-1">XL</Pill>
             </div>
-            <button className="bg-absolute-white flex items-center p-2 pl-[14px] rounded-full">View Similar </button>
+            <button className="bg-absolute-white flex items-center order-3 p-2 pl-[14px] rounded-full">View Similar </button>
           </div>
         </div>
       </section>
       <section>
-        <div className="flex justify-between items-center gap-x-[150px]">
-          <div>
-            <div className="relative w-fit">
-              <h1>DISCOVER FASHION.</h1>
-              <span className="top-0 right-0 absolute translate-x-[110%] shrink-0">PRODUCTS</span>
+        <div className="flex sm:flex-row flex-col justify-between items-center sm:gap-x-[150px]">
+          <div className="mb-5 sm:mb-0">
+            <div className="section-header">
+              <h1 className="section-title">DISCOVER FASHION.</h1>
+              <span className="section-subtitle">PRODUCTS</span>
             </div>
-            <p className="mt-5">Dive into a world of fashion innovation at Klothink. Our carefully curated collections bring together the latest trends and timeless classics, ensuring you find the perfect pieces for every occasion.</p>
+            <p className="section-tagline">Dive into a world of fashion innovation at Klothink. Our carefully curated collections bring together the latest trends and timeless classics, ensuring you find the perfect pieces for every occasion.</p>
           </div>
-          <FilledButton>View All Products</FilledButton>
+          <FilledButton className="mr-auto sm:mr-0">View All Products</FilledButton>
         </div>
-        <div className="flex justify-between items-center my-[60px]">
-          <div className="flex gap-x-8">
-            {_categories.map((category) => (
-              <button key={category} className="text-grey-40">{category}</button>
-            ))}
+        <div className="flex sm:flex-row flex-col justify-between items-center my-[60px]">
+          <div className="pb-5 w-full overflow-scroll scrollbar-hide">
+            <div className="flex gap-x-8">
+              {_categories.map((category) => (
+                <button key={category} className="text-grey-40">{category}</button>
+              ))}
+            </div>
           </div>
-          <div className="flex gap-x-2 border-white-95 border-y py-6">
+          <div className="flex gap-x-2 border-white-95 border-y mr-auto sm:mr-0 py-5 sm:py-6 w-full sm:w-fit">
             {_subCategries.map((category) => (
-              <FilledButton key={category} className="text-absolute-white bg-grey-15">{category}</FilledButton>
+              <button key={category} className="flex-1 justify-center items-center bg-[#262626] py-[12px] sm:py-[14px] rounded-full text-[#FFFFFF]">{category}</button>
             ))}
           </div>
         </div>
-        <div className="gap-x-[30px] grid grid-cols-4">
+        <div className="gap-x-[30px] grid sm:grid-cols-4">
           {_productsList.map(({ image, name, price }) => (
             <ProductCard key={name} name={name} image={image} price={price} />
           ))}
@@ -100,16 +104,16 @@ export default function Home() {
       <section>
         <div className="flex justify-between items-center gap-x-[150px]">
           <div>
-            <div className="relative w-fit">
-              <h1>THE KLOTHINK EXPERIENCE.</h1>
-              <span className="top-0 right-0 absolute translate-x-[110%] shrink-0">ABOUT US</span>
+            <div className="section-header">
+              <h1 className="section-title">THE KLOTHINK EXPERIENCE.</h1>
+              <span className="section-subtitle">ABOUT US</span>
             </div>
-            <p className="mt-5">At Klothink, we breathe life into fashion, blending creativity with commitment. Our journey is fueled by a dedication to delivering unparalleled style and quality. Join us in redefining fashion and embracing a community where every purchase tells a story.</p>
+            <p className="section-tagline">At Klothink, we breathe life into fashion, blending creativity with commitment. Our journey is fueled by a dedication to delivering unparalleled style and quality. Join us in redefining fashion and embracing a community where every purchase tells a story.</p>
           </div>
         </div>
-        <div className="gap-5 grid grid-cols-3 py-5">
+        <div className="gap-5 grid sm:grid-cols-3 py-5">
           {_aboutUs.map(({ tagline, title, icon }) => (
-            <div key={title} className="p-[30px]">
+            <div key={title} className="p-6 sm:p-[30px]">
               <div className="flex items-center gap-x-[10px]">
                 <div className="flex justify-center items-center bg-yellow-50 rounded-full size-12">
                   {icon}
@@ -122,19 +126,19 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="flex justify-between items-center gap-x-[150px]">
-          <div>
-            <div className="relative w-fit">
-              <h1>CUSTOMERS LOVE.</h1>
-              <span className="top-0 right-0 absolute translate-x-[110%] shrink-0">TESTIMONIALS</span>
+        <div className="flex sm:flex-row flex-col justify-between items-center gap-x-[150px]">
+          <div className="mb-5 sm:mb-0">
+            <div className="section-header">
+              <h1 className="section-title">CUSTOMERS LOVE.</h1>
+              <span className="section-subtitle">TESTIMONIALS</span>
             </div>
-            <p className="mt-5">At Klothink, our customers are the heartbeat of our brand. Explore the heartfelt testimonials shared by those who have experienced the magic of Klothink fashion.</p>
+            <p className="section-tagline">At Klothink, our customers are the heartbeat of our brand. Explore the heartfelt testimonials shared by those who have experienced the magic of Klothink fashion.</p>
           </div>
-          <FilledButton>View All Testimonials</FilledButton>
+          <FilledButton className="mr-auto sm:mr-0">View All Testimonials</FilledButton>
         </div>
-        <div className="gap-x-5 grid grid-cols-3 mt-[60px] p-6">
+        <div className="gap-x-5 grid sm:grid-cols-3 mt-10 sm:mt-[60px] p-5 sm:p-6">
           {_testimonials.map(({ image, name, rating, review }) => (
-            <div key={name} className="p-10">
+            <div key={name} className="p-[30px] sm:p-10">
               <div className="flex items-center gap-x-[10px]">
                 <div className="relative bg-[#FFEEB2] rounded-full overflow-hidden size-[50px]">
                   <Image src={image} alt={name} fill />
@@ -154,13 +158,13 @@ export default function Home() {
       </section>
       <section>
         <div>
-          <div className="relative w-fit">
-            <h1>Questions? We Have Answers.</h1>
-            <span className="top-0 right-0 absolute translate-x-[110%] shrink-0">FAQ</span>
+          <div className="section-header">
+            <h1 className="section-title">Questions? We Have Answers.</h1>
+            <span className="section-subtitle">FAQ</span>
           </div>
-          <p className="mt-5">Dive into a world of fashion innovation at Klothink. Our carefully curated collections bring together the latest trends and timeless classics, ensuring you find the perfect pieces for every occasion.</p>
+          <p className="section-tagline">Dive into a world of fashion innovation at Klothink. Our carefully curated collections bring together the latest trends and timeless classics, ensuring you find the perfect pieces for every occasion.</p>
         </div>
-        <div className="gap-x-[30px] grid grid-cols-3 mt-[60px]">
+        <div className="gap-x-[30px] grid sm:grid-cols-3 mt-[60px]">
           <div className="flex flex-col gap-5">
             <Faq />
             <Faq />
@@ -174,7 +178,7 @@ export default function Home() {
             <Faq />
             <Faq />
           </div>
-          <div className="flex flex-col gap-5">
+          <div className="sm:flex flex-col gap-5 hidden">
             <Faq />
             <Faq />
             <Faq />
@@ -185,19 +189,21 @@ export default function Home() {
       <section>
         <div className="flex justify-between items-center gap-x-[150px]">
           <div>
-            <div className="relative w-fit">
-              <h1>Seamless Experience.</h1>
-              <span className="top-0 right-0 absolute uppercase translate-x-[110%] shrink-0">How it Works ?</span>
+            <div className="section-header">
+              <h1 className="section-title">Seamless Experience.</h1>
+              <span className="section-subtitle">How it Works ?</span>
             </div>
-            <p className="mt-5">At Klothink, we've designed a straightforward shopping experience to make fashion accessible. Explore the journey from discovering the latest trends to receiving your handpicked styles with ease.</p>
+            <p className="section-tagline">At Klothink, we've designed a straightforward shopping experience to make fashion accessible. Explore the journey from discovering the latest trends to receiving your handpicked styles with ease.</p>
           </div>
         </div>
-        <div className="gap-4 grid grid-cols-4 p-4">
+        <div className="gap-4 grid sm:grid-cols-4 mt-[50px] sm:mt-10 p-[10px] sm:p-4">
           {_howItWorks.map(({ tagline, title }, index) => (
-            <div key={title} className="border-white-95 p-6 border rounded-[14px]">
-              <span className="h-fit font-semibold text-[60px] text-white-90 leading-[150%]">0{index + 1}</span>
-              <h3 className="mt-5 mb-[6px] text-[#333333]">{title}</h3>
-              <span>{tagline}</span>
+            <div key={title} className="flex sm:flex-col gap-x-5 border-white-95 p-6 border rounded-[14px]">
+              <span className="h-fit font-semibold text-[60px] text-white-90 leading-[150%] shrink-0">0{index + 1}</span>
+              <div>
+                <h3 className="sm:mt-5 mb-[6px] text-[#333333]">{title}</h3>
+                <span>{tagline}</span>
+              </div>
             </div>
           ))}
         </div>

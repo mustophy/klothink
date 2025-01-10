@@ -18,9 +18,9 @@ export const OutlinedButton: React.FC<IButton> = ({ children, icon, className })
     )
 }
 
-export const Pill: React.FC<IButton> = ({ children }) => {
+export const Pill: React.FC<IButton> = ({ children, className }) => {
     return (
-        <button className="flex justify-center items-center border-white-95 bg-white-97 py-2 border rounded-[32px] min-w-[40px] h-[25px] text-[12px] text-grey-15 shrink-0">
+        <button className={`flex justify-center items-center border-white-95 bg-white-97 py-2 border rounded-[32px] min-w-[40px] h-[25px] text-[12px] text-grey-15 shrink-0 ${className}`}>
             {children}
         </button>
     )

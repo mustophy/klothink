@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { FilledButton, OutlinedButton, Pill } from "./_components/Button";
 import { LifebuoyIcon, LightBulbIcon, ShoppingBagIcon, SparklesIcon, SpeakerWaveIcon, StarIcon, SunIcon } from "@heroicons/react/16/solid";
-import ProductCard from "./_components/ProductCard";
-import Rating from "./_components/Rating";
 import Faq from "./_components/Faq";
 import TestimonialSlider from "./_components/sliders/TestimonialSlider";
 import ProductSlider from "./_components/sliders/ProductSlider";
@@ -29,7 +27,7 @@ export default function Home() {
   const _categories = ['ALL', 'MENSWEAR', 'WOMENSWEAR', 'KIDSWEAR'];
   const _subCategries = ['Casual', 'Formal', 'Party'];
   return (
-    <main className="flex flex-col gap-y-20 sm:gap-y-[150px] px-4 sm:px-20 pt-10 sm:pt-20">
+    <main className="page-contents">
       <section className="flex sm:flex-row flex-col sm:gap-x-[60px]">
         <div className="flex-1">
           <div className="section-header">
@@ -93,7 +91,7 @@ export default function Home() {
           </div>
           <div className="flex gap-x-2 border-white-95 border-y mr-auto sm:mr-0 py-5 sm:py-6 w-full sm:w-fit">
             {_subCategries.map((category) => (
-              <button key={category} className="flex-1 justify-center items-center bg-[#262626] py-[12px] sm:py-[14px] rounded-full text-[#FFFFFF]">{category}</button>
+              <button key={category} className="flex-1 justify-center items-center bg-[#262626] py-[12px] px-6 sm:py-[14px] rounded-full text-[#FFFFFF]">{category}</button>
             ))}
           </div>
         </div>

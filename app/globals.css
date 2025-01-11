@@ -77,12 +77,20 @@ nav ul {
 .center-y {
   @apply top-[50%] translate-y-[-50%]
 }
-
+.-center-y {
+  @apply top-0 translate-y-0
+}
 .center-x {
   @apply left-[50%] translate-x-[-50%]
 }
+.center-x- {
+  @apply left-0 translate-x-0
+}
 .center-xy {
   @apply left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]
+}
+.-center-xy {
+  @apply left-0 top-0 translate-x-0 translate-y-0
 }
 
 input:focus {

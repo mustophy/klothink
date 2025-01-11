@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { FilledButton, OutlinedButton, Pill } from "./_components/Button";
 import { LifebuoyIcon, LightBulbIcon, ShoppingBagIcon, SparklesIcon, SpeakerWaveIcon, StarIcon, SunIcon } from "@heroicons/react/16/solid";
-import Faq from "./_components/Faq";
 import TestimonialSlider from "./_components/sliders/TestimonialSlider";
 import ProductSlider from "./_components/sliders/ProductSlider";
+import FAQSection from "./_components/FAQSection";
 
 export default function Home() {
   const _heroFeatures = [
@@ -136,34 +136,7 @@ export default function Home() {
         <TestimonialSlider testimonials={_testimonials} />
       </section>
       <section>
-        <div>
-          <div className="section-header">
-            <h1 className="section-title">Questions? We Have Answers.</h1>
-            <span className="section-subtitle">FAQ</span>
-          </div>
-          <p className="section-tagline">Dive into a world of fashion innovation at Klothink. Our carefully curated collections bring together the latest trends and timeless classics, ensuring you find the perfect pieces for every occasion.</p>
-        </div>
-        <div className="gap-x-[30px] grid sm:grid-cols-3 mt-[60px]">
-          <div className="flex flex-col gap-5">
-            <Faq />
-            <Faq />
-            <Faq />
-            <Faq />
-          </div>
-          <div className="flex flex-col gap-5">
-            <Faq />
-            <Faq />
-            <Faq />
-            <Faq />
-            <Faq />
-          </div>
-          <div className="sm:flex flex-col gap-5 hidden">
-            <Faq />
-            <Faq />
-            <Faq />
-            <Faq />
-          </div>
-        </div>
+        <FAQSection />
       </section>
       <section>
         <div className="flex justify-between items-center gap-x-[150px]">

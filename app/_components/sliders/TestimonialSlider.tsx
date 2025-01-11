@@ -11,7 +11,7 @@ interface ISlide {
 
 const TestimonialSlider: React.FC<ISlide> = ({ testimonials }) => {
     return (
-        <div className="relative w-full">
+        <div className="relative py-6 w-full">
             <Swiper
                 className="!static overflow-auto mySwiper"
                 slidesPerView={1}
@@ -23,7 +23,7 @@ const TestimonialSlider: React.FC<ISlide> = ({ testimonials }) => {
             >
                 {testimonials.map(({ image, name, rating, review }) => (
                     <SwiperSlide className="pr-5" key={name}>
-                        <div className="p-[30px] sm:p-10">
+                        <div className="p-[30px] rounded-[20px] border border-white-95 sm:p-10">
                             <div className="flex items-center gap-x-[10px]">
                                 <div className="relative bg-[#FFEEB2] rounded-full overflow-hidden size-[50px]">
                                     <Image src={image} alt={name} fill />

@@ -32,6 +32,10 @@ p {
   @apply text-[14px] sm:text-[16px];
 }
 
+label {
+  @apply text-[14px] text-grey-70
+}
+
 span {
   @apply text-[14px];
 }
@@ -40,8 +44,16 @@ nav {
   @apply py-[18px] border-b px-4 sm:px-20;
 }
 
+input {
+  @apply bg-white-97 w-full rounded-[32px] px-5 py-4 border-y-white-95 border text-[14px] text-grey-10 font-medium placeholder:font-medium
+}
+
 nav ul {
   @apply gap-x-[14px] relative flex items-center;
+}
+
+.form-field {
+  @apply flex flex-col gap-y-2
 }
 
 .nav-link {

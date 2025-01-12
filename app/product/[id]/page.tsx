@@ -47,7 +47,7 @@ const ProductDetail = () => {
                 icon={
                   <ShoppingBagIcon className="size-5 text-absolute-white" />
                 }
-                className="text-absolute-white flex-1 sm:flex-none bg-grey-15"
+                className="!text-absolute-white flex-1 sm:flex-none !bg-grey-15"
               >
                 Buy Now
               </FilledButton>

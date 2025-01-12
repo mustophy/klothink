@@ -11,10 +11,11 @@ interface ISlide {
 
 const TestimonialSlider: React.FC<ISlide> = ({ testimonials }) => {
     return (
-        <div className="relative py-6 w-full">
+        <div className="relative py-6 w-full ">
             <Swiper
-                className="!static overflow-auto mySwiper"
+                className="!static overflow-auto mySwiper flex items-center"
                 slidesPerView={1}
+                spaceBetween={24}
                 breakpoints={{
                     640: {
                         slidesPerView: 3
@@ -22,7 +23,7 @@ const TestimonialSlider: React.FC<ISlide> = ({ testimonials }) => {
                 }}
             >
                 {testimonials.map(({ image, name, rating, review }) => (
-                    <SwiperSlide className="pr-5" key={name}>
+                    <SwiperSlide className="" key={name}>
                         <div className="p-[30px] rounded-[20px] border border-white-95 sm:p-10">
                             <div className="flex items-center gap-x-[10px]">
                                 <div className="relative bg-[#FFEEB2] rounded-full overflow-hidden size-[50px]">
@@ -53,7 +54,7 @@ export default TestimonialSlider
 const PrevButton = () => {
     const swiper = useSwiper()
     return (
-        <button onClick={() => swiper.slidePrev()} className="top-0 -left-3 sm:-left-5 z-10 absolute flex justify-center items-center border-grey-70 border rounded-full cursor-pointer center-y size-8 sm:size-12">
+        <button onClick={() => swiper.slidePrev()} className="left-[45%] sm:-left-5 translate-x-[-100%] sm:translate-x-0 z-10 absolute flex justify-center items-center border-grey-70 border rounded-full cursor-pointer sm:top-[50%] sm:-translate-y-[50%] size-8 sm:size-12">
             <ChevronLeftIcon className="text-grey-40 size-5" />
         </button>
     )
@@ -64,7 +65,7 @@ const NextButton = () => {
     const isLastSlide = swiper.isEnd
     console.log(isLastSlide)
     return (
-        <button onClick={() => swiper.slideNext()} className={`top-0 -right-3 sm:-right-5 z-10 absolute flex justify-center items-center border-grey-70 border rounded-full cursor-pointer center-y size-8 sm:size-12 `}>
+        <button onClick={() => swiper.slideNext()} className={`right-[45%] sm:-right-5 translate-x-[50%] sm:translate-x-0 z-10 absolute flex justify-center items-center border-grey-70 border rounded-full cursor-pointer sm:top-[50%] sm:-translate-y-[50%] size-8 sm:size-12 `}>
             <ChevronRightIcon className="size-5" />
         </button>
     )
